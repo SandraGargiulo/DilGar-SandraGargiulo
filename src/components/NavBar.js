@@ -18,7 +18,7 @@ function NavBar() {
                             height="30"
                             className="d-inline-block align-top"
                         />
-                        {' '}
+                          {' '}
                         Electromecanica Dil-Gar
                     </Navbar.Brand>
                 </Container>
