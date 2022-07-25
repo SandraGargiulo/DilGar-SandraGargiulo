@@ -1,12 +1,19 @@
-import NavBar from './components/NavBar';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
+import Navbar from './components/NavBar/NavBar';
+// import Counter from './Counter/Counter';
+import ItemListContainer from './components/ItemListContainer/ItemListContainer';
+
 function App() {
-  return <>
-    <NavBar />
-    <h2>Las ofertas de la semana</h2>
-  </>;
+
+
+  return (
+    <div className="App">
+      <Navbar />
+      {/* <Counter /> */}
+      <ItemListContainer greeting='1' />
+    </div>
+  );
 }
 
 export default App;
