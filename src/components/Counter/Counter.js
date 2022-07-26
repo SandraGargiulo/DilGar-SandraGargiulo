@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState } from 'react';
 
 const Counter = () => {
     const [count, setCount] = useState(10)
@@ -18,4 +18,5 @@ const Counter = () => {
         </div>
     )
 }
-export default Counter
+
+export default Counter;

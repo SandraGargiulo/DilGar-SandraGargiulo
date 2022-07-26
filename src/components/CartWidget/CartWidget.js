@@ -1,8 +1,11 @@
+import './CartWidget.css';
+import Cart from '../../images/cart.svg';
+
 const CartWidget =() => {
   return (
     <div>
-      <img src='images/cart.svg' alt='CartWidget' />
-      10
+      <img src={Cart} alt='CartWidget' />
+      5
     </div>
   )
 }

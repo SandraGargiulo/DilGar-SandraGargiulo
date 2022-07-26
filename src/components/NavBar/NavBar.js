@@ -1,29 +1,40 @@
+import CartWidget from '../CartWidget/CartWidget';
+import Container from 'react-bootstrap/Container';
+import Navbar from 'react-bootstrap/Navbar';
+import Nav from 'react-bootstrap/Nav';
+import NavDropdown from 'react-bootstrap/NavDropdown';
+import Logo from '../../images/energy.png'
 
-import Button from '../Button/Button'
-import CartWidget from '../CartWidget/CartWidget'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-const Navbar = () => {
-
-    const text = 'hice click'
-
-    const handleClick = () => {
-        console.log(text)
-    }
-
+const NavBar = () => {
     return (
-        <nav className="Navbar">
-            <div>
-                <h1>Ecommerce</h1>
-            </div>
-            <div>
-                {/* {React.createElement(Button, { label: 'Prueba', color: 'orange'})} */}
-                <Button handleClick={handleClick} color='red'>celulares</Button>
-                <Button color='blue'>tablets</Button>
-                <Button color='green'>notebooks</Button>
-            </div>
+        <>
+            <Navbar bg="light" variant="light">
+                <Container>
+                    <Navbar.Brand href="#home">
+                        <img
+                            alt="Electromecanica Dil-Gar"
+                            src={Logo}
+                            className="d-inline-block align-top"
+                        />{' '}
+                        Electromecanica Dil-Gar
+                    </Navbar.Brand>
+                    <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                    <Navbar.Collapse id="basic-navbar-nav">
+                        <Nav className="me-auto">
+                            <Nav.Link href="#home">Principal</Nav.Link>
+                            <NavDropdown title="Productos" id="basic-nav-dropdown">
+                                <NavDropdown.Item href="#action/3.1">Motores</NavDropdown.Item>
+                                <NavDropdown.Item href="#action/3.2">Grupos electrogenos </NavDropdown.Item>
+                            </NavDropdown>
+                        </Nav>
+                    </Navbar.Collapse>
+                </Container>
+            </Navbar>
             <CartWidget />
-        </nav>
+        </>
     )
 }
 
-export default Navbar
+export default NavBar;
