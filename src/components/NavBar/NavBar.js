@@ -5,6 +5,7 @@ import Nav from 'react-bootstrap/Nav';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Logo from '../../images/energy.png'
 
+import './NavBar.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const NavBar = () => {
