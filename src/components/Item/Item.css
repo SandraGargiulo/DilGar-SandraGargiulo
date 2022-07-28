@@ -1,0 +1,29 @@
+.product-card {
+    text-align: center;
+    width: 22rem;
+    height: 100%;
+}
+
+.product-card__image {
+    width: 180px;
+    height: 180px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.product-card__name {
+    font-size: 1rem;
+}
+
+.product-card__price {
+    font-size: 1.6rem;
+}
+
+.product-card__brand{
+    font-weight: bold;
+}
+
+.product-card__type {
+    font-weight: bold;
+    font-size: 1rem;
+}
