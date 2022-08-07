@@ -1,64 +1,14 @@
-import React, { useEffect, useState } from 'react';
+
 import Item from '../Item/Item';
-import { productList } from '../../data/data.js';
 import './ItemList.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-const ItemList = () => {
-    const [products, setProducts] = useState([]);
-
-    const getProducts = new Promise((resolve, reject) => {
-        setTimeout(() => {
-            if (true) {
-                resolve(productList);
-            } else {
-                reject('error');
-            }
-        }, 2000);
-    });
-
-    const getProductsFromDB = async () => {
-        try {
-            const result = await getProducts;
-            setProducts(result);
-        } catch (error) {
-            console.error(error);
-            alert('No podemos mostrar los productos en este momento');
-        }
-    };
-
-    useEffect(() => {
-        getProductsFromDB();
-    }, []);
-
+const ItemList = ({ products }) => {
     return (
-        <div className="product-list-container">
-            {
-                products.length ? ( 
-                    <>
-                        {
-                            products.map((product) => {
-                                return (
-                                    <Item
-                                        key={product.id}
-                                        name={product.name}
-                                        thumbnail={product.thumbnail}
-                                        price={product.price}
-                                        stock={product.stock}
-                                        id={product.id}
-                                        brand={product.brand}
-                                        type={product.type}
-                                    />
-                                );
-                            })
-                        }
-                    </>
-                ) : (
-                    <p>Cargando productos...</p>
-                ) 
-            }
+        <div className='ItemList'>
+            {products.map(prod => <Item key={prod.id} {...prod} />)}
         </div>
-    );
-};
+    )
+}
 
-export default ItemList;
+export default ItemList

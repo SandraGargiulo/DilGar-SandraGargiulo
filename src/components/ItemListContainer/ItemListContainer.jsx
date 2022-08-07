@@ -1,16 +1,31 @@
 import React from 'react';
-import ItemList from '../ItemList/ItemList';
-
 import './ItemListContainer.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import { getProducts, getProductsByCategory } from '../../asynMock';
+import ItemList from '../ItemList/ItemList' 
 
-const ItemListContainer = () => {
+const ItemListContainer = ({greeting}) => {
+    const [products, setProducts] = useState([])
+
+    const { categoryId } = useParams()
+    useEffect(() => {
+        const asyncFunction = categoryId ? getProductsByCategory : getProducts
+
+        asyncFunction(categoryId).then(products => {
+            setProducts(products)
+        }).catch(error => {
+            console.log(error)
+        })
+    }, [categoryId])
+
     return (
-        <section className="item-list-container">
-            <h2 className="item-list-container__title">Motores</h2>
-            <ItemList />
-        </section>
-    );
-};
+        <>
+            <h1>{greeting}</h1>
+            <ItemList products={products} />
+        </>
+    )
+}
 
 export default ItemListContainer;

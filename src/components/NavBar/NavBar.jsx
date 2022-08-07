@@ -6,7 +6,7 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 
 import Logo from '../../images/energy.png'
 import CartWidget from '../CartWidget/CartWidget';
-
+import { Link } from 'react-router-dom';
 import './NavBar.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -26,10 +26,10 @@ const NavBar = () => {
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="me-auto">
-                            <Nav.Link href="#home">Principal</Nav.Link>
+                            <Nav.Link><Link to={"#home"}>Principal</Link></Nav.Link>
                             <NavDropdown title="Productos" id="basic-nav-dropdown">
-                                <NavDropdown.Item href="#action/3.1">Motores</NavDropdown.Item>
-                                <NavDropdown.Item href="#action/3.2">Grupos electrogenos</NavDropdown.Item>
+                                <NavDropdown.Item> <Link to={'/type/Motor'}>Motores</Link></NavDropdown.Item>
+                                <NavDropdown.Item> <Link to={'/type/Grupo'}>Grupos electrogenos</Link></NavDropdown.Item>
                             </NavDropdown>
                         </Nav>
                     </Navbar.Collapse>
