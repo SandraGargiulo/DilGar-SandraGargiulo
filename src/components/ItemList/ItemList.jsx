@@ -1,5 +1,5 @@
 
-import Item from '../Item/Item';
+import Item from '../Item/Item.jsx';
 import './ItemList.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 

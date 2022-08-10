@@ -5,7 +5,7 @@ import Nav from 'react-bootstrap/Nav';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 
 import Logo from '../../images/energy.png'
-import CartWidget from '../CartWidget/CartWidget';
+import CartWidget from '../CartWidget/CartWidget.jsx';
 import { Link } from 'react-router-dom';
 import './NavBar.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -28,8 +28,8 @@ const NavBar = () => {
                         <Nav className="me-auto">
                             <Nav.Link><Link to={"#home"}>Principal</Link></Nav.Link>
                             <NavDropdown title="Productos" id="basic-nav-dropdown">
-                                <NavDropdown.Item> <Link to={'/type/Motor'}>Motores</Link></NavDropdown.Item>
-                                <NavDropdown.Item> <Link to={'/type/Grupo'}>Grupos electrogenos</Link></NavDropdown.Item>
+                                <NavDropdown.Item> <Link to={'/category/Motor'}>Motores</Link></NavDropdown.Item>
+                                <NavDropdown.Item> <Link to={'/category/Grupo'}>Grupos electrogenos</Link></NavDropdown.Item>
                             </NavDropdown>
                         </Nav>
                     </Navbar.Collapse>
@@ -41,3 +41,5 @@ const NavBar = () => {
 }
 
 export default NavBar;
+
+/*****/ 
