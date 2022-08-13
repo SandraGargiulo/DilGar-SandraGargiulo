@@ -1,23 +1,12 @@
+import React from "react";
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-import Navbar from './components/NavBar/NavBar.jsx';
-import ItemListContainer from './components/ItemListContainer/ItemListContainer.jsx';
-import ItemDetailContainer from './components/ItemDetailConteiner/ItemDetailConteiner.jsx';
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 function App() {
 
   return (
     <div className="App">
-      <BrowserRouter>
-        <Navbar />
-        <Routes>
-          <Route path='/' element={<ItemListContainer greeting={'Listado de todos los productos'}/>} />
-          <Route path='/detail/:productId/' element= {<ItemDetailContainer />}/>
-    
-        </Routes>
-        {/**<footer/> */}
-      </BrowserRouter>
-
+      <h1>This is Homepage</h1>
     </div>
   );
 }

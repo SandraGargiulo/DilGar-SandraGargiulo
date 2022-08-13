@@ -46,6 +46,17 @@ const products = [
         stock: 6,
         id: '4',
     },
+    {
+        category: 'Grupo',
+        brand: 'Motores Czerweny',
+        name: '',
+        description: '',
+        price: 20775,
+        thumbnail:
+            '',
+        stock: 6,
+        id: '5',
+    },
 ]
 
 export const getProducts = () => {

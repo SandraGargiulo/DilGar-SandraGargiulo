@@ -1,12 +1,51 @@
+import React from 'react'
+import { LinkContainer } from 'react-router-bootstrap';
+import './NavBar.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Logo from '../../images/energy.png'
+import { Navbar, Nav} from 'react-bootstrap';
+import CartWidget from '../CartWidget/CartWidget';
+
+const NavBar =()=>{
+        return (
+            <Navbar bg="light" expand="lg">
+                <LinkContainer to="/">
+                    <Navbar.Brand>
+                        <img
+                            alt="Electromecanica Dil-Gar"
+                            src={Logo}
+                            className="d-inline-block align-top"
+                        />{' '}
+                        Electromecanica Dil-Gar
+                    </Navbar.Brand>
+                </LinkContainer>
+                <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                <Navbar.Collapse id="basic-navbar-nav">
+                    <Nav className="mr-auto">
+                        <LinkContainer to="/motores">
+                            <Nav.Link>Motores</Nav.Link>
+                        </LinkContainer>
+                        <LinkContainer to="/grupos">
+                            <Nav.Link>Grupos</Nav.Link>
+                        </LinkContainer>
+                    </Nav>
+                </Navbar.Collapse>
+                <CartWidget/>
+            </Navbar>
+        )
+}
+export default NavBar;
+/*
 
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
-import NavDropdown from 'react-bootstrap/NavDropdown';
-
+import { LinkContainer } from 'react-router-bootstrap';
 import Logo from '../../images/energy.png'
 import CartWidget from '../CartWidget/CartWidget.jsx';
-import { Link } from 'react-router-dom';
+
+
+
 import './NavBar.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -15,7 +54,8 @@ const NavBar = () => {
         <>
             <Navbar className="navbar">
                 <Container>
-                    <Navbar.Brand href="#home">
+                    <LinkContainer to="/">
+                    <Navbar.Brand>
                         <img
                             alt="Electromecanica Dil-Gar"
                             src={Logo}
@@ -23,14 +63,12 @@ const NavBar = () => {
                         />{' '}
                         Electromecanica Dil-Gar
                     </Navbar.Brand>
+                    </LinkContainer>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="me-auto">
-                            <Nav.Link><Link to={"#home"}>Principal</Link></Nav.Link>
-                            <NavDropdown title="Productos" id="basic-nav-dropdown">
-                                <NavDropdown.Item> <Link to={'/category/Motor'}>Motores</Link></NavDropdown.Item>
-                                <NavDropdown.Item> <Link to={'/category/Grupo'}>Grupos electrogenos</Link></NavDropdown.Item>
-                            </NavDropdown>
+                            <LinkContainer to="/motores"><Nav.Link>Motores</Nav.Link></LinkContainer>
+                            <LinkContainer to="/grupos"><Nav.Link>Grupos electrogenos</Nav.Link></LinkContainer>
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
@@ -39,7 +77,5 @@ const NavBar = () => {
         </>
     )
 }
-
 export default NavBar;
-
-/*****/ 
+*/
