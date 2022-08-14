@@ -1,6 +1,6 @@
 const products = [
     {
-        category: 'Motor',
+        category: 'motor',
         brand: 'Motores Czerweny',
         name: 'Motor Monofasico 1 Hp 56 Mc4Lrc',
         description: 
@@ -13,7 +13,7 @@ const products = [
         id: '1',
     },
     {
-        category: 'Motor',
+        category: 'motor',
         brand: 'Motores Czerweny',
         name: 'Motor Monofasico Hormigonera 0.6 Hp 56Mc4Rh',
         description: '✅ Tensión: 220V ✅ Protección: IP21 ✅ Corriente 6, 5 A ✅ Frecuencia: 50 Hz' +
@@ -25,7 +25,7 @@ const products = [
         id: '2',
     },
     {
-        category: 'Motor',
+        category: 'motor',
         brand: 'Motores Czerweny',
         name: 'Bomba Sumergible Agua Limpia Plas 500W',
         price: 18965,
@@ -36,7 +36,7 @@ const products = [
         id: '3',
     },
     {
-        category: 'Motor',
+        category: 'motor',
         brand: 'Motores Czerweny',
         name: 'Bomba Sumergible Agua Limpia Plas 650W',
         description: '',
@@ -47,7 +47,7 @@ const products = [
         id: '4',
     },
     {
-        category: 'Grupo',
+        category: 'grupo',
         brand: 'Motores Czerweny',
         name: '',
         description: '',
@@ -75,7 +75,7 @@ export const getProductById = (id) => {
     })
 }
 
-export const getProductByCategory = (category) => {
+export const getProductsByCategory = (category) => {
     return new Promise((resolve) => {
         setTimeout(() => {
             resolve(products.find(prod => prod.category === category))

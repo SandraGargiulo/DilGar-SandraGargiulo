@@ -19,7 +19,7 @@ const Item = ({ name, thumbnail, price, id, stock, brand, category }) => {
                     <Card.Title className="product-card__price">${price}</Card.Title>
                     <Card.Title className="product-card__brand">{brand}</Card.Title>
                     <Card.Title className="product-card__name">{name}</Card.Title>
-                    <Link to={`/detail/${id}`} className='Option'>Ver detalle</Link>
+                    <Link to={`${category}/${id}`} className='Option'>Ver detalle</Link>
                 </Card.Body>
                 <ItemCount stock={stock} onAdd={onAdd} initial={1} />
             </Card>

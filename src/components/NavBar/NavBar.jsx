@@ -22,10 +22,10 @@ const NavBar =()=>{
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="mr-auto">
-                        <LinkContainer to="/motores">
+                        <LinkContainer to="/category/motor">
                             <Nav.Link>Motores</Nav.Link>
                         </LinkContainer>
-                        <LinkContainer to="/grupos">
+                        <LinkContainer to="/category/grupo">
                             <Nav.Link>Grupos</Nav.Link>
                         </LinkContainer>
                     </Nav>

@@ -4,8 +4,8 @@ import './index.css'
 import App from "./App";
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
-import Motores from "./components/pages/motores";
-import Grupos from "./components/pages/grupos";
+import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
+import ItemDetailConteiner from "./components/ItemDetailConteiner/ItemDetailConteiner"
 import NavBar from "./components/NavBar/NavBar";
 
 
@@ -15,8 +15,9 @@ ReactDOM.render(
             <NavBar />
             <Routes>
                 <Route exact path="/" element={<App/>} />
-                <Route path="/motores" element={<Motores />} />
-                <Route path="/grupos" element={<Grupos/>} />
+                <Route path='/category/:categoryId' element={<ItemListContainer greeting='Listado filtrado' />} />
+                <Route path='/detail/:productId' element={<ItemDetailConteiner />} /> 
+                <Route path='*' element={<h1>404 NOT FOUND</h1>}/>
             </Routes>
         </Router>
     </React.StrictMode>,
