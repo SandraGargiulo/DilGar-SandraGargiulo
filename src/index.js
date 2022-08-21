@@ -15,7 +15,7 @@ ReactDOM.render(
             <NavBar />
             <Routes>
                 <Route exact path="/" element={<App/>} />
-                <Route path='/category/:categoryId' element={<ItemListContainer greeting='Listado filtrado' />} />
+                <Route path='/category/:categoryId' element={<ItemListContainer />} />
                 <Route path='/detail/:productId' element={<ItemDetailConteiner />} /> 
                 <Route path='*' element={<h1>404 NOT FOUND</h1>}/>
             </Routes>
