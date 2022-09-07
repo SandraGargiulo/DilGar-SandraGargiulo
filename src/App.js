@@ -1,16 +1,15 @@
-import React from "react";
-import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
-import './App.css';
-import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
+import React from 'react'
+import { BrowserRouter } from 'react-router-dom'
 
-function App() {
+import AppRouter from 'routes/AppRouter'
+import { CartProvider } from 'context/CartContext'
 
-  return (
-    <div className="App">
-      <h1>Listado de todos los productos</h1>
-      <ItemListContainer />
-    </div>
-  );
-}
+const App = () => (
+  <BrowserRouter>
+        <CartProvider>
+              <AppRouter />
+        </CartProvider>
+      </BrowserRouter>
+);
 
 export default App;
